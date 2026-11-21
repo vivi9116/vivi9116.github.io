@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SKU-01 — E-Commerce Seller Profit &amp; Bookkeeping System | CalmGrid Studio</title>
-<meta name="description" content="SKU-01 is a 9-tab Google Sheets system for e-commerce sellers: profit dashboards, SKU pricing, inventory, orders, expenses, tax, and invoicing — in one calm workbook.">
+<meta name="description" content="Know your real profit — sales, fees, tax, all in one place. A 9-tab Google Sheets system for e-commerce sellers. One-time purchase: $19 Google Sheets, $29 with Excel.">
 <style>
   :root{
     --canvas:#FAF6F2; --card:#FFFFFF; --header:#F2E5DC; --header2:#EBD8CC;
@@ -12,24 +12,47 @@
   }
   *{box-sizing:border-box}
   body{margin:0;background:var(--canvas);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
-  header{background:var(--header);padding:56px 20px 44px;text-align:center}
-  header h1{margin:0 0 8px;font-size:2.1rem;letter-spacing:-.02em}
-  header p{margin:0 auto;max-width:680px;color:var(--muted)}
+  header{background:var(--header);padding:56px 20px 40px;text-align:center}
+  header h1{margin:0 0 12px;font-size:2.3rem;letter-spacing:-.02em;line-height:1.2}
+  header p{margin:0 auto;max-width:680px;color:var(--muted);font-size:1.1rem}
+  .eyebrow{letter-spacing:.12em;text-transform:uppercase;font-size:.85rem;color:var(--primary);font-weight:700;margin-bottom:12px}
   .wrap{max-width:920px;margin:0 auto;padding:32px 20px 64px}
   .card{background:var(--card);border:1px solid #EDE3DA;border-radius:16px;padding:28px;margin:0 0 20px;box-shadow:0 4px 20px rgba(62,50,46,.05)}
-  h2{margin-top:0;color:var(--primary)}
-  .btn{display:inline-block;background:var(--primary);color:#fff;text-decoration:none;padding:12px 20px;border-radius:999px;font-weight:650;margin:6px 8px 6px 0}
+  h2{margin-top:0;color:var(--primary);font-size:1.5rem;line-height:1.3}
+  .btn{display:inline-block;background:var(--primary);color:#fff;text-decoration:none;padding:14px 26px;border-radius:999px;font-weight:700;margin:6px 8px 6px 0;font-size:1.05rem}
   .btn.secondary{background:var(--secondary)}
   .btn.ghost{background:transparent;color:var(--text);border:1px solid #D8CFC7}
+  .btnrow{margin-top:22px}
+  .heroimg{max-width:100%;height:auto;border-radius:16px;border:1px solid #EDE3DA;box-shadow:0 8px 30px rgba(62,50,46,.10);margin:28px auto 0;display:block}
+  .caption{font-size:.85rem;color:var(--muted);text-align:center;margin:10px 0 0}
+  .trust{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:0 0 20px}
+  .trust span{background:var(--card);border:1px solid #EDE3DA;border-radius:999px;padding:8px 16px;font-weight:650;font-size:.95rem}
   ul,ol{padding-left:20px}
-  li{margin:6px 0}
-  table{width:100%;border-collapse:collapse;margin:16px 0;font-size:.95rem}
-  th{background:var(--header);text-align:left;padding:10px 12px;border:1px solid #E5D8CE}
-  td{padding:10px 12px;border:1px solid #EDE3DA;vertical-align:top}
-  .callout{background:var(--header);border-radius:12px;padding:16px 18px;margin:12px 0}
+  li{margin:8px 0}
+  .benefit img{max-width:100%;height:auto;border-radius:12px;border:1px solid #EDE3DA;margin:12px 0 4px;display:block}
+  .statline{font-weight:700;color:var(--primary)}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .step{background:var(--header);border-radius:12px;padding:18px}
+  .step b{display:block;font-size:1.05rem;margin-bottom:4px}
+  .prices{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .price{border:2px solid #EDE3DA;border-radius:16px;padding:24px;position:relative}
+  .price.best{border-color:var(--primary)}
+  .badge{position:absolute;top:-13px;right:18px;background:var(--primary);color:#fff;font-size:.8rem;font-weight:700;border-radius:999px;padding:4px 12px}
+  .price h3{margin:0 0 6px;font-size:1.2rem}
+  .price .now{font-size:2rem;font-weight:800;color:var(--primary)}
+  .price .was{color:var(--muted);text-decoration:line-through;margin-right:8px;font-size:1.1rem}
+  .price .code{font-size:.9rem;color:var(--muted)}
+  .price ul{margin:12px 0 18px}
+  .center{text-align:center}
+  .small{font-size:.9rem;color:var(--muted)}
   footer{text-align:center;color:var(--muted);font-size:.9rem;padding:24px 20px 40px}
   a{color:var(--primary)}
-  @media (max-width:600px){header h1{font-size:1.7rem}.card{padding:20px}table{font-size:.88rem}}
+  @media (max-width:600px){
+    header h1{font-size:1.8rem}
+    .card{padding:20px}
+    .steps{grid-template-columns:1fr}
+    .prices{grid-template-columns:1fr}
+  }
 </style>
 <script type="application/ld+json">
 {
@@ -101,34 +124,50 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What is included in SKU-01?",
+      "name": "I opened it in Google Sheets and it says view only — how do I edit it?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "SKU-01 includes 9 linked Google Sheets tabs: Start_Here, Annual_Dashboard, Monthly_View, SKU_Pricing, Inventory_Tracker, Orders_Log, Expense_Log, Tax_Tracker, and Invoice_Template."
+        "text": "After purchase, open the template link from your Gumroad library, then click File — Make a copy. Your copy is yours to edit. For the Excel edition, download the file and open it in Excel."
       }
     },
     {
       "@type": "Question",
-      "name": "Is SKU-01 a subscription?",
+      "name": "Can I use it on my phone, Mac or iPad?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. SKU-01 is a one-time purchase: $19 for Google Sheets, $29 for Google Sheets + Excel. Use code CALMGRID25 for 25% off ($14.25 / $21.75)."
+        "text": "Yes — Google Sheets works on phone, Mac and iPad. First setup is easiest on a computer."
       }
     },
     {
       "@type": "Question",
-      "name": "Who is SKU-01 for?",
+      "name": "What exactly is a spreadsheet template?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "SKU-01 is for e-commerce sellers, including Etsy and Shopify sellers, who want profit, bookkeeping, inventory, tax, and invoicing in one Google Sheets workbook."
+        "text": "A pre-built workbook with the formulas already in place. You type in your orders and expenses; dashboards, pricing and tax update themselves."
       }
     },
     {
       "@type": "Question",
-      "name": "How do I get the template after purchase?",
+      "name": "What's the difference between the $19 and $29 versions?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "After purchase through Gumroad, use the template copy link to make your own copy in Google Sheets. The copy link is https://docs.google.com/spreadsheets/d/14fMRaXFVdCkuMQWNfDlV7VKulsF4J04MMyTCnYmKT60/copy"
+        "text": "Same 9 tabs. The $29 version adds the full 9-tab Excel edition as a downloadable file."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this tax advice?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. It is an organizer, not tax or legal advice. Talk to a qualified tax professional for your situation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if the file won't open or a formula breaks?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Email leekerfigytebe@gmail.com and we will help you fix it."
       }
     }
   ]
@@ -137,75 +176,131 @@
 </head>
 <body>
 <header>
-  <p style="letter-spacing:.12em;text-transform:uppercase;font-size:.85rem;color:var(--primary);font-weight:700">CalmGrid Studio · SKU-01</p>
-  <h1>E-Commerce Seller Profit &amp; Bookkeeping System</h1>
-  <p>9-Tab Google Sheets Edition — one calm workbook for profit, bookkeeping, inventory, tax, and invoicing.</p>
-  <p>
-    <a class="btn" href="https://docs.google.com/spreadsheets/d/14fMRaXFVdCkuMQWNfDlV7VKulsF4J04MMyTCnYmKT60/copy">Get the template</a>
-    <a class="btn secondary" href="https://calmgridstudio.gumroad.com/l/sku-01?utm_source=landing_page&utm_medium=web&utm_campaign=sku01_launch&utm_content=SKU-01">Visit the store</a>
+  <p class="eyebrow">CalmGrid Studio · SKU-01</p>
+  <h1>Know your real profit — sales, fees, tax, all in one place.</h1>
+  <p>A 9-tab Google Sheets system for e-commerce sellers. Type in your orders and expenses — dashboards, pricing and tax update themselves.</p>
+  <p class="btnrow">
+    <a class="btn" href="https://calmgridstudio.gumroad.com/l/sku-01?utm_source=landing_page&utm_medium=web&utm_campaign=sku01_launch&utm_content=SKU-01">Get SKU-01 — $19</a>
+    <a class="btn ghost" href="https://calmgridstudio.gumroad.com/l/free-ecommerce-profit-calculator?utm_source=landing_page&utm_medium=web&utm_campaign=sku01_launch&utm_content=free_calculator">Try the free 1-tab calculator</a>
   </p>
-  <p>One-time purchase: $19 Google Sheets · $29 Google Sheets + Excel · 25% off with CALMGRID25 ($14.25 / $21.75).</p>
+  <img class="heroimg" src="../images/hero_dashboard.png" alt="Annual Dashboard of the SKU-01 template — revenue $3,068.00, net profit $1,034.48, net margin 33.7%, sample data" width="1200" height="800">
+  <p class="caption">The Annual Dashboard, live in the template. Sample data included — see every formula working before you type your own numbers.</p>
 </header>
 
 <main class="wrap">
+  <div class="trust">
+    <span>9 linked tabs</span>
+    <span>1,145 formulas checked · 0 errors</span>
+    <span>One-time payment</span>
+    <span>Free 1-tab version to try first</span>
+  </div>
+
   <section class="card">
-    <div class="callout">
-      <strong>Bottom line first:</strong> If you want a simple, one-time Google Sheets system instead of a paid subscription with recurring costs, SKU-01 is built for that. It keeps seller profit and bookkeeping in one workbook — no monthly accounting software required.
-    </div>
-    <h2>Google Sheets template vs. a paid subscription — at a glance</h2>
-    <p>This comparison is qualitative only. No specific competitor prices are claimed here; subscription prices change over time and should be verified on the provider's own site.</p>
-    <table>
-      <thead>
-        <tr><th></th><th>SKU-01 — Google Sheets template</th><th>QuickBooks Self-Employed (paid subscription)</th></tr>
-      </thead>
-      <tbody>
-        <tr><td><strong>Payment model</strong></td><td>One-time purchase — $19 Google Sheets / $29 Google Sheets + Excel</td><td>Paid subscription with recurring cost</td></tr>
-        <tr><td><strong>What you get</strong></td><td>A 9-tab Google Sheets workbook you copy and keep</td><td>Accounting software accessed through a subscription</td></tr>
-        <tr><td><strong>Best for</strong></td><td>Sellers who want a simple, visual tracker in Google Sheets</td><td>Sellers who want full accounting software features</td></tr>
-        <tr><td><strong>Inventory &amp; SKU pricing</strong></td><td>Built-in Inventory_Tracker and SKU_Pricing tabs</td><td>Not the focus of a general self-employed accounting tool — check the provider's current feature list</td></tr>
-        <tr><td><strong>Learning curve</strong></td><td>Guided Start_Here tab, familiar spreadsheet layout</td><td>Accounting software setup and workflow to learn</td></tr>
-      </tbody>
-    </table>
-    <p><em>Example to verify (not a confirmed figure): subscription software often costs more over a year than a one-time template, because the cost recurs. Check QuickBooks' current pricing before deciding.</em></p>
+    <h2>Sound familiar?</h2>
+    <ul>
+      <li>You sold a lot last month — but after fees, shipping and ads, you're not sure what you actually kept.</li>
+      <li>Tax time arrives and the number is a surprise.</li>
+      <li>You price by guessing, and some items quietly lose money.</li>
+    </ul>
+    <p>SKU-01 puts all three in one workbook, so the answer is always one glance away.</p>
+  </section>
+
+  <section class="card benefit">
+    <h2>See your real profit at a glance</h2>
+    <p>The Annual Dashboard adds up revenue, costs and fees for you — then shows profit and margin for the whole year, month by month.</p>
+    <p class="statline">Revenue $3,068.00 · Net profit $1,034.48 · Margin 33.7% — sample data, live in the template.</p>
+  </section>
+
+  <section class="card benefit">
+    <h2>Price every item with its real margin</h2>
+    <p>SKU Pricing breaks each product down: price, platform fees, shipping, marketing, total cost — and the profit you keep on every sale.</p>
+    <img src="../images/pricing_card.png" alt="SKU Pricing tab — Ceramic Mug: price $28.00, fees $2.86, total cost $16.56, profit $11.44, margin 40.9%, sample data" width="1200" height="560" loading="lazy">
+    <p class="caption">Sample data included in the template.</p>
+  </section>
+
+  <section class="card benefit">
+    <h2>Tax, set aside before it's due</h2>
+    <p>The Tax Tracker works out your tax reserve from your real profit — quarter by quarter, so April never surprises you.</p>
+    <img src="../images/tax_card.png" alt="Tax Tracker tab — pre-tax net profit $1,034.48, estimated annual tax due $258.63, net balance due $33.63, sample data" width="1200" height="560" loading="lazy">
+    <p class="caption">Sample data included in the template.</p>
   </section>
 
   <section class="card">
     <h2>What's inside — the 9 tabs</h2>
     <ol>
-      <li><strong>Start_Here</strong> — guided starting point and how to use the workbook.</li>
-      <li><strong>Annual_Dashboard</strong> — year-at-a-glance profit, income, and expense summary.</li>
+      <li><strong>Start_Here</strong> — setup guide: how the workbook works.</li>
+      <li><strong>Annual_Dashboard</strong> — full-year revenue, costs, profit and margin.</li>
       <li><strong>Monthly_View</strong> — month-by-month profit and performance.</li>
-      <li><strong>SKU_Pricing</strong> — price products with costs and margins in mind.</li>
-      <li><strong>Inventory_Tracker</strong> — track stock, costs, and product levels.</li>
-      <li><strong>Orders_Log</strong> — log orders and sales in one place.</li>
-      <li><strong>Expense_Log</strong> — log business expenses as they happen.</li>
-      <li><strong>Tax_Tracker</strong> — organise tax-related figures for the year.</li>
-      <li><strong>Invoice_Template</strong> — create invoices from the same workbook.</li>
+      <li><strong>SKU_Pricing</strong> — price, fees, cost, profit and margin per SKU.</li>
+      <li><strong>Inventory_Tracker</strong> — stock levels, costs and product levels.</li>
+      <li><strong>Orders_Log</strong> — every order, in one place.</li>
+      <li><strong>Expense_Log</strong> — every expense, as it happens.</li>
+      <li><strong>Tax_Tracker</strong> — tax reserve and quarterly tax.</li>
+      <li><strong>Invoice_Template</strong> — invoices from the same workbook.</li>
     </ol>
+    <p class="btnrow"><a class="btn" href="https://calmgridstudio.gumroad.com/l/sku-01?utm_source=landing_page&utm_medium=web&utm_campaign=sku01_launch&utm_content=SKU-01">Get SKU-01 — $19</a></p>
   </section>
 
   <section class="card">
-    <h2>Who it's for</h2>
-    <ul>
-      <li>Etsy sellers tracking profit, expenses, and tax</li>
-      <li>Shopify sellers who want a simple bookkeeping tracker in Google Sheets</li>
-      <li>Small online sellers who want inventory, pricing, and invoicing together</li>
-      <li>Sellers who prefer a calm, visual spreadsheet over accounting software</li>
-    </ul>
+    <h2>How it works</h2>
+    <div class="steps">
+      <div class="step"><b>1. Buy on Gumroad</b>One-time payment. Instant access, no subscription.</div>
+      <div class="step"><b>2. Make your copy</b>Open the link from your Gumroad library, then File → Make a copy. Your copy is yours.</div>
+      <div class="step"><b>3. Type in your numbers</b>Orders and expenses in — dashboards, pricing and tax update themselves.</div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Choose your version</h2>
+    <div class="prices">
+      <div class="price">
+        <h3>Google Sheets</h3>
+        <p><span class="was">$19</span><span class="now">$14.25</span></p>
+        <p class="code">with code CALMGRID25 at checkout (25% off)</p>
+        <ul>
+          <li>9-tab Google Sheets template</li>
+          <li>Quick-start PDF guide</li>
+        </ul>
+        <p><a class="btn" href="https://calmgridstudio.gumroad.com/l/sku-01?utm_source=landing_page&utm_medium=web&utm_campaign=sku01_launch&utm_content=SKU-01">Get Sheets — $14.25</a></p>
+      </div>
+      <div class="price best">
+        <span class="badge">Best value</span>
+        <h3>Google Sheets + Excel</h3>
+        <p><span class="was">$29</span><span class="now">$21.75</span></p>
+        <p class="code">with code CALMGRID25 at checkout (25% off)</p>
+        <ul>
+          <li>Everything in Google Sheets</li>
+          <li>Full 9-tab Excel edition (.xlsx)</li>
+          <li>Quick-start PDF guide</li>
+        </ul>
+        <p><a class="btn" href="https://calmgridstudio.gumroad.com/l/sku-01?utm_source=landing_page&utm_medium=web&utm_campaign=sku01_launch&utm_content=SKU-01">Get Sheets + Excel — $21.75</a></p>
+      </div>
+    </div>
+    <p class="center small">One-time payment · Instant access · No subscription</p>
+  </section>
+
+  <section class="card center">
+    <h2>Not sure yet? Try the free one first.</h2>
+    <p>The free 1-tab calculator uses the same pricing math as the full workbook — one tab, five sample products, yours to keep.</p>
+    <p><a class="btn secondary" href="https://calmgridstudio.gumroad.com/l/free-ecommerce-profit-calculator?utm_source=landing_page&utm_medium=web&utm_campaign=sku01_launch&utm_content=free_calculator">Get the free 1-tab calculator</a></p>
+    <p class="small">New store — that's why the 1-tab version is free to try first.</p>
   </section>
 
   <section class="card">
     <h2>Questions</h2>
-    <p><strong>What is included?</strong><br>9 linked Google Sheets tabs, listed above.</p>
-    <p><strong>Is it a subscription?</strong><br>No — one-time purchase, $19 Google Sheets / $29 Google Sheets + Excel. 25% off with CALMGRID25.</p>
-    <p><strong>How do I get it?</strong><br>Buy through Gumroad, then use the copy link to make your own Google Sheets copy.</p>
-    <p><strong>Who do I contact for support?</strong><br>Email <a href="mailto:leekerfigytebe@gmail.com">leekerfigytebe@gmail.com</a></p>
+    <p><strong>I opened it in Google Sheets and it says view only — how do I edit it?</strong><br>After purchase, open the template link from your Gumroad library, then click File → Make a copy. Your copy is yours to edit. For the Excel edition, download the file and open it in Excel.</p>
+    <p><strong>Can I use it on my phone, Mac or iPad?</strong><br>Yes — Google Sheets works on all of them. First setup is easiest on a computer.</p>
+    <p><strong>What exactly is a spreadsheet template?</strong><br>A pre-built workbook with the formulas already in place. You type in your orders and expenses; dashboards, pricing and tax update themselves.</p>
+    <p><strong>What's the difference between the $19 and $29 versions?</strong><br>Same 9 tabs. The $29 version adds the full 9-tab Excel edition as a downloadable file.</p>
+    <p><strong>Is this tax advice?</strong><br>No. It's an organizer, not tax or legal advice. Talk to a qualified tax professional for your situation.</p>
+    <p><strong>What if the file won't open or a formula breaks?</strong><br>Email <a href="mailto:leekerfigytebe@gmail.com">leekerfigytebe@gmail.com</a> and we'll help you fix it.</p>
   </section>
 
-  <section class="card" style="text-align:center">
+  <section class="card center">
     <h2>Ready to see your profit clearly?</h2>
-    <p><a class="btn" href="https://docs.google.com/spreadsheets/d/14fMRaXFVdCkuMQWNfDlV7VKulsF4J04MMyTCnYmKT60/copy">Get the template (copy link)</a></p>
-    <p><a class="btn ghost" href="https://calmgridstudio.gumroad.com/l/sku-01?utm_source=landing_page&utm_medium=web&utm_campaign=sku01_launch&utm_content=SKU-01">CalmGrid Studio store</a> <a class="btn ghost" href="../">Back to CalmGrid Studio home</a></p>
+    <p><a class="btn" href="https://calmgridstudio.gumroad.com/l/sku-01?utm_source=landing_page&utm_medium=web&utm_campaign=sku01_launch&utm_content=SKU-01">Get SKU-01 — $19</a></p>
+    <p class="small">One-time payment · Instant access · No subscription · Free 1-tab version to try first</p>
+    <p><a href="../">Back to CalmGrid Studio home</a></p>
   </section>
 </main>
 
