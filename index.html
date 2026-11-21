@@ -12,28 +12,33 @@
   }
   *{box-sizing:border-box}
   body{margin:0;background:var(--canvas);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
-  header{background:var(--header);padding:56px 20px 44px;text-align:center}
-  header h1{margin:0 0 8px;font-size:2.2rem;letter-spacing:-.02em}
-  header p{margin:0 auto;max-width:640px;color:var(--muted)}
+  header{background:var(--header);padding:56px 20px 40px;text-align:center}
+  header h1{margin:0 0 12px;font-size:2.3rem;letter-spacing:-.02em;line-height:1.2}
+  header p{margin:0 auto;max-width:640px;color:var(--muted);font-size:1.1rem}
   .wrap{max-width:920px;margin:0 auto;padding:32px 20px 64px}
   .card{background:var(--card);border:1px solid #EDE3DA;border-radius:16px;padding:28px;margin:0 0 20px;box-shadow:0 4px 20px rgba(62,50,46,.05)}
-  h2{margin-top:0;color:var(--primary)}
-  .btn{display:inline-block;background:var(--primary);color:#fff;text-decoration:none;padding:12px 20px;border-radius:999px;font-weight:650;margin:6px 8px 6px 0}
+  h2{margin-top:0;color:var(--primary);font-size:1.5rem;line-height:1.3}
+  .btn{display:inline-block;background:var(--primary);color:#fff;text-decoration:none;padding:14px 26px;border-radius:999px;font-weight:700;margin:6px 8px 6px 0;font-size:1.05rem}
   .btn.secondary{background:var(--secondary)}
   .btn.ghost{background:transparent;color:var(--text);border:1px solid #D8CFC7}
+  .btnrow{margin-top:22px}
+  .heroimg{max-width:100%;height:auto;border-radius:16px;border:1px solid #EDE3DA;box-shadow:0 8px 30px rgba(62,50,46,.10);margin:28px auto 0;display:block}
+  .caption{font-size:.85rem;color:var(--muted);text-align:center;margin:10px 0 0}
+  .trust{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:0 0 20px}
+  .trust span{background:var(--card);border:1px solid #EDE3DA;border-radius:999px;padding:8px 16px;font-weight:650;font-size:.95rem}
   ul{padding-left:20px}
   li{margin:6px 0}
   .tag{display:inline-block;background:var(--header2);border-radius:999px;padding:4px 10px;font-size:.85rem;margin:2px 4px 2px 0}
   footer{text-align:center;color:var(--muted);font-size:.9rem;padding:24px 20px 40px}
   a{color:var(--primary)}
-  @media (max-width:600px){header h1{font-size:1.7rem}.card{padding:20px}}
+  @media (max-width:600px){header h1{font-size:1.8rem}.card{padding:20px}}
 </style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "CalmGrid Studio",
-  "url": "https://calmgridstudio.gumroad.com",
+  "url": "https://vivi9116.github.io/",
   "email": "leekerfigytebe@gmail.com",
   "description": "CalmGrid Studio makes calm, low-saturation Google Sheets templates for e-commerce sellers, freelancers, and small businesses.",
   "sameAs": [
@@ -86,14 +91,22 @@
 <header>
   <h1>CalmGrid Studio</h1>
   <p>Calm, beautiful Google Sheets templates for sellers and small businesses — no clutter, no loud colours, just a clear view of your money.</p>
-  <p>
-    <a class="btn" href="https://calmgridstudio.gumroad.com?utm_source=landing_page&utm_medium=web&utm_campaign=sku01_launch&utm_content=SKU-01">Visit the Gumroad store</a>
-    <a class="btn secondary" href="sku-01/">See SKU-01</a>
+  <p class="btnrow">
+    <a class="btn" href="sku-01/">See SKU-01 — $19</a>
     <a class="btn ghost" href="https://calmgridstudio.gumroad.com/l/free-ecommerce-profit-calculator?utm_source=landing_page&utm_medium=web&utm_campaign=sku01_launch&utm_content=free_calculator">Try the free 1-tab profit calculator</a>
   </p>
+  <img class="heroimg" src="images/hero_dashboard.png" alt="Annual Dashboard of the SKU-01 template — revenue $3,068.00, net profit $1,034.48, net margin 33.7%, sample data" width="1200" height="800">
+  <p class="caption">The SKU-01 Annual Dashboard. Sample data included in the template.</p>
 </header>
 
 <main class="wrap">
+  <div class="trust">
+    <span>9 linked tabs</span>
+    <span>1,145 formulas checked · 0 errors</span>
+    <span>One-time payment</span>
+    <span>Free 1-tab version to try first</span>
+  </div>
+
   <section class="card">
     <h2>Start with SKU-01</h2>
     <p><strong>E-Commerce Seller Profit &amp; Bookkeeping System (9-Tab Google Sheets Edition)</strong> — one workbook for orders, expenses, inventory, pricing, tax, and invoicing, with annual and monthly dashboards.</p>
@@ -104,8 +117,8 @@
       <span class="tag">Inventory tracker</span>
       <span class="tag">Invoice template</span>
     </p>
-    <p><a class="btn" href="sku-01/">View SKU-01</a> <a class="btn ghost" href="https://docs.google.com/spreadsheets/d/14fMRaXFVdCkuMQWNfDlV7VKulsF4J04MMyTCnYmKT60/copy">Get the template (copy link)</a></p>
     <p>Price: $19 Google Sheets · $29 Google Sheets + Excel · 25% off with CALMGRID25 ($14.25 / $21.75).</p>
+    <p><a class="btn" href="sku-01/">View SKU-01</a></p>
   </section>
 
   <section class="card">
