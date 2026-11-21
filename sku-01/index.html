@@ -74,6 +74,11 @@
   details summary{font-weight:700;cursor:pointer;font-size:1.05rem}
   details p{margin:10px 0 0;color:var(--muted)}
   footer{text-align:center;color:var(--muted);font-size:.9rem;padding:28px 20px 44px;border-top:1px solid var(--line)}
+  .buybar{position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--ink);color:#F5EEE8;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 20px;box-shadow:0 -6px 24px rgba(43,33,28,.25)}
+  .buybar .what{font-size:.95rem}
+  .buybar .what b{font-family:Georgia,serif;font-size:1.15rem;color:#fff}
+  .buybar .what s{color:#C9BBAF;margin-left:6px}
+  body{padding-bottom:64px}
   @media (max-width:860px){
     .hero{grid-template-columns:1fr;padding:44px 20px 40px;gap:28px}
     .hero h1{font-size:2.2rem}
@@ -85,6 +90,9 @@
     .prices{grid-template-columns:1fr}
     .wrap{padding:52px 20px}
     nav .logo{font-size:1.1rem}
+    .hero .btn,.wrap .btn,.band-dark .btn{display:block;text-align:center;margin:8px 0}
+    .buybar{padding:10px 14px}
+    .buybar .what{font-size:.85rem}
   }
 </style>
 <script type="application/ld+json">
@@ -133,7 +141,7 @@
 <body>
 <nav>
   <a class="logo" href="../">CalmGrid <b>Studio</b></a>
-  <a class="btn small" href="https://calmgridstudio.gumroad.com/l/sku-01?utm_source=landing_page&amp;utm_medium=web&amp;utm_campaign=sku01_launch&amp;utm_content=SKU-01">Get Calm Profit System — $19</a>
+  <a class="btn small" href="https://calmgridstudio.gumroad.com/l/sku-01?code=CALMGRID25&amp;utm_source=landing_page&amp;utm_medium=web&amp;utm_campaign=sku01_launch&amp;utm_content=SKU-01">Get Calm Profit System — $14.25</a>
 </nav>
 
 <header class="hero">
@@ -142,10 +150,10 @@
     <h1>You sold a lot.<br>Did you keep anything?</h1>
     <p class="lede">A 9-tab Google Sheets system for e-commerce sellers. Type in your orders and expenses — dashboards, pricing and tax update themselves, so you always know your real profit.</p>
     <p>
-      <a class="btn" href="https://calmgridstudio.gumroad.com/l/sku-01?utm_source=landing_page&amp;utm_medium=web&amp;utm_campaign=sku01_launch&amp;utm_content=SKU-01">Get Calm Profit System — $19</a>
+      <a class="btn" href="https://calmgridstudio.gumroad.com/l/sku-01?code=CALMGRID25&amp;utm_source=landing_page&amp;utm_medium=web&amp;utm_campaign=sku01_launch&amp;utm_content=SKU-01">Get Calm Profit System — $14.25</a>
       <a class="btn ghost" href="https://calmgridstudio.gumroad.com/l/free-ecommerce-profit-calculator?utm_source=landing_page&amp;utm_medium=web&amp;utm_campaign=sku01_launch&amp;utm_content=free_calculator">Try the free 1-tab calculator</a>
     </p>
-    <p class="fine">One-time payment · Instant access · Free 1-tab version to try first</p>
+    <p class="fine">One-time payment · Instant access · 25% off applied automatically · Free 1-tab version to try first</p>
   </div>
   <div>
     <img class="shot" src="../images/hero_dashboard_framed.png" alt="Annual Dashboard of the Calm Profit System template — revenue $3,068.00, net profit $1,034.48, net margin 33.7%, sample data" width="1200" height="560">
@@ -220,7 +228,7 @@
       <div class="tab"><b><code>Tax_Tracker</code></b><p>Tax reserve and quarterly tax.</p></div>
       <div class="tab"><b><code>Invoice_Template</code></b><p>Invoices from the same workbook.</p></div>
     </div>
-    <p style="margin-top:28px"><a class="btn" href="https://calmgridstudio.gumroad.com/l/sku-01?utm_source=landing_page&amp;utm_medium=web&amp;utm_campaign=sku01_launch&amp;utm_content=SKU-01">Get Calm Profit System — $19</a></p>
+    <p style="margin-top:28px"><a class="btn" href="https://calmgridstudio.gumroad.com/l/sku-01?code=CALMGRID25&amp;utm_source=landing_page&amp;utm_medium=web&amp;utm_campaign=sku01_launch&amp;utm_content=SKU-01">Get Calm Profit System — $14.25</a></p>
   </section>
 
   <section class="band-oat">
@@ -246,7 +254,7 @@
           <li>9-tab Google Sheets template</li>
           <li>Quick-start PDF guide</li>
         </ul>
-        <p><a class="btn" href="https://calmgridstudio.gumroad.com/l/sku-01?utm_source=landing_page&amp;utm_medium=web&amp;utm_campaign=sku01_launch&amp;utm_content=SKU-01">Get Sheets — $14.25</a></p>
+        <p><a class="btn" href="https://calmgridstudio.gumroad.com/l/sku-01?code=CALMGRID25&amp;utm_source=landing_page&amp;utm_medium=web&amp;utm_campaign=sku01_launch&amp;utm_content=SKU-01">Get Sheets — $14.25</a></p>
       </div>
       <div class="price best">
         <span class="badge">Best value</span>
@@ -258,7 +266,7 @@
           <li>Full 9-tab Excel edition (.xlsx)</li>
           <li>Quick-start PDF guide</li>
         </ul>
-        <p><a class="btn" href="https://calmgridstudio.gumroad.com/l/sku-01?utm_source=landing_page&amp;utm_medium=web&amp;utm_campaign=sku01_launch&amp;utm_content=SKU-01">Get Sheets + Excel — $21.75</a></p>
+        <p><a class="btn" href="https://calmgridstudio.gumroad.com/l/sku-01?code=CALMGRID25&amp;utm_source=landing_page&amp;utm_medium=web&amp;utm_campaign=sku01_launch&amp;utm_content=SKU-01">Get Sheets + Excel — $21.75</a></p>
       </div>
     </div>
   </section>
@@ -286,11 +294,13 @@
     <div class="wrap center">
       <h2>Ready to see your profit clearly?</h2>
       <p class="sub" style="margin:0 auto 30px">One-time payment · Instant access · No subscription · Free 1-tab version to try first</p>
-      <p><a class="btn" href="https://calmgridstudio.gumroad.com/l/sku-01?utm_source=landing_page&amp;utm_medium=web&amp;utm_campaign=sku01_launch&amp;utm_content=SKU-01">Get Calm Profit System — $19</a></p>
+      <p><a class="btn" href="https://calmgridstudio.gumroad.com/l/sku-01?code=CALMGRID25&amp;utm_source=landing_page&amp;utm_medium=web&amp;utm_campaign=sku01_launch&amp;utm_content=SKU-01">Get Calm Profit System — $14.25</a></p>
       <p style="margin-top:22px"><a href="../" style="color:#C9BBAF">Back to CalmGrid Studio home</a></p>
     </div>
   </section>
 </main>
+
+<div class="buybar"><div class="what"><b>Calm Profit System</b><s>$19</s> <b>$14.25</b> · 25% off, applied</div><a class="btn small" href="https://calmgridstudio.gumroad.com/l/sku-01?code=CALMGRID25&amp;utm_source=landing_page&amp;utm_medium=web&amp;utm_campaign=sku01_launch&amp;utm_content=SKU-01">Get it now</a></div>
 
 <footer>
   CalmGrid Studio · Calm Profit System · <a href="https://calmgridstudio.gumroad.com">calmgridstudio.gumroad.com</a> · <a href="mailto:leekerfigytebe@gmail.com">leekerfigytebe@gmail.com</a>
